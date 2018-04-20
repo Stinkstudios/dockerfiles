@@ -1,4 +1,6 @@
-FROM ubuntu:xenial
+FROM debian:buster-20180312
+
+RUN sed -i 's/main/main non-free/' /etc/apt/sources.list
 
 RUN apt-get update -y -qq && \
 	apt-get install -y -qq \
@@ -6,24 +8,19 @@ RUN apt-get update -y -qq && \
     libboost-system-dev \
     libboost-thread-dev \
     libboost-timer-dev \
-    libcppnetlib-dev \
     libfdk-aac-dev \
     libjsoncpp-dev \
     libopencv-contrib-dev \
     libopencv-dev \
-    libpng12-0 \
+    libpng-dev \
     librsvg2-dev \
-    libwebp-dev \
-    libzmq-dev \
-    libzmq1 \
     libxml2-dev \
     libxslt1-dev \
     libtiff5-dev \
-    libjpeg8-dev \
+    libjpeg-dev \
     zlib1g-dev \
     libfreetype6-dev \
     liblcms2-dev \
-    libwebp-dev \
     libffi-dev \
     libssl-dev \
     libx264-dev \
@@ -38,9 +35,7 @@ RUN apt-get update -y -qq && \
     libavformat-dev \
     libavcodec-dev \
     libthai-dev \
-    librsvg2-dev
-
-RUN apt-get install -y wget jq awscli
+	wget jq awscli
 
 RUN mkdir /app
 WORKDIR /app
