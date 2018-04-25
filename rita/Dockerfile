@@ -3,15 +3,15 @@ FROM debian:buster-20180312
 RUN sed -i 's/main/main non-free/' /etc/apt/sources.list
 
 RUN apt-get update -y -qq && \
-	apt-get install -y -qq \
+    apt-get install -y -qq \
     libboost-dev \
     libboost-system-dev \
     libboost-thread-dev \
     libboost-timer-dev \
     libfdk-aac-dev \
     libjsoncpp-dev \
-    libopencv-contrib-dev \
-    libopencv-dev \
+    libopencv-imgproc-dev \
+    libopencv-highgui-dev \
     libpng-dev \
     librsvg2-dev \
     libxml2-dev \
@@ -35,7 +35,7 @@ RUN apt-get update -y -qq && \
     libavformat-dev \
     libavcodec-dev \
     libthai-dev \
-	wget jq awscli
+    wget jq awscli
 
 RUN mkdir /app
 WORKDIR /app
