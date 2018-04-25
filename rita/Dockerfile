@@ -11,6 +11,7 @@ RUN apt-get update -y -qq && \
     libfdk-aac-dev \
     libjsoncpp-dev \
     libopencv-imgproc-dev \
+    libopencv-imgcodecs-dev \
     libopencv-highgui-dev \
     libpng-dev \
     librsvg2-dev \
