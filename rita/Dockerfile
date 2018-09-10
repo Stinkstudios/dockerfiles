@@ -36,7 +36,7 @@ RUN apt-get update -y -qq && \
     libavformat-dev \
     libavcodec-dev \
     libthai-dev \
-    wget jq awscli
+    wget jq awscli ffmpeg
 
 RUN mkdir /app
 WORKDIR /app
